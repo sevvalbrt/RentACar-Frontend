@@ -1,0 +1,49 @@
+<!-- <li *ngIf="rentCars.length>0" class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Kiralanmış Araçlar
+    </a>
+    
+
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li *ngFor="let rentCar of rentCars"><a  
+        class="dropdown-item">
+        <span class="badge bg-secondary">{{rentCar.quantity}}</span>{{rentCar.car.description}}<span (click)="removeFromRent(rentCar.car)" class="badge bg-secondary">Sil</span></a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="nav-link" routerLink="/cars/rentals">Kiralanan Araçlar</a></li>
+    </ul>
+  </li> -->
+ 
+ 
+  <br />
+<div>
+  <div>
+    <h1>Kiralanan Arabalar</h1>
+    <hr />
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Araba</th>
+          <th>Marka</th>
+          <th>Fiyat</th>
+          <th>Kiralama Tarihi</th>
+          <th>Teslim Tarihi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let rental of rentals"
+          routerLink="/cars/{{ rental.carId }}"
+          appTable
+          defaultColor
+        >
+          <th>{{ rental.carName }}</th>
+          <th>{{ rental.brandName }}</th>
+          <th>{{ rental.dailyPrice }}</th>
+          <th>{{ rental.rentDate }}</th>
+          <th>{{ rental.returnDate }}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div></div>

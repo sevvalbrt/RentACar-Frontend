@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header">
+      {{operationType === 'Add'?'Add Color':"Update Color" }}
+    </div>
+    <div class="card-body">
+        <form [formGroup]="colorForm"> 
+            <div class="mb-3">
+              <label for="colorName" class="form-label">Color Name</label>
+              <input type="text" 
+              formControlName="colorName"
+              placeholder="Color name"
+              class="form-control" 
+              id="colorName" 
+              aria-describedby="nameHelp">
+            </div>
+            <button type="submit" class="btn btn-success" (click)="currentColorId? updateColor():addColor()">{{currentColorId? 'Update':'Add'}}</button>
+          </form>
+    </div>
+  </div>
+
+<!-- <div class="form-control">
+        <li *ngFor="let color of colors" >{{color.colorName}}</li>
+    
+</div> -->
+

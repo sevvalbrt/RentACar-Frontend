@@ -1,0 +1,112 @@
+
+<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>  -->
+<!--<h4>Araç Bilgisi</h4>
+    <table *ngIf="dataLoaded==true" class ="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>BrandName</th>
+                <th>ColorName</th>
+                <th>ModelYear</th>
+                <th>DailyPrice</th>   
+            </tr>
+        </thead>
+        <tr *ngFor="let car of cars">
+            <td>{{car.description}}</td>
+            <td>{{car.brandName}}</td>
+            <td>{{car.colorName}}</td>
+            <td>{{car.modelYear}}</td>
+            <td>{{car.dailyPrice}}</td>
+        </tr>
+    </table> -->
+
+ <!-- <div class="mb-3">
+    
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search">
+</div>
+    <div *ngIf="filterText.length>2" class="alert alert-success">
+        {{filterText}} aradınız
+    </div>
+<div class="row">
+<div *ngFor="let car of cars | filterCarPipe:filterText" class="col-md-4">
+    <div class="card" style="width: 14rem;">
+      <img src="{{imageBasePath}}{{car.imagePath}}" class="card-img-top" alt={{car.description}}>
+        <div class="card-body">
+          <h5 class="card-title">{{car.description | uppercase}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Brand Name: {{ car.brandName  }} </li>
+            <li class="list-group-item">Color Name: {{ car.colorName }} </li>
+            <li class="list-group-item">Model Year: {{ car.modelYear }}</li>
+            <li class="list-group-item">Daily Price: {{ car.dailyPrice }} </li>
+            <li class="list-group-item">Daily Price: {{ car.dailyPrice |vatAdded:10 | currency}} </li>
+            <li class="list-group-item"><button (click)="rentACar(car)" type="button" class="btn btn-success">Kirala</button></li>
+          </ul>
+          <div class="card-body">
+            <section style="float:left">
+                <button routerLink="car/detail/{{car.id}}" type="button" class="btn btn-primary">Details</button>
+              </section>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+
+
+<app-filter></app-filter>
+<br>
+
+  <div class="row">
+    <div *ngFor="let car of cars | filterCarPipe:filterText " class="col-md-4">
+      <div class="card" style="width: 14rem;">
+        <img src="{{imageBasePath}}{{getCarImage(car)}}" class="card-img-top" alt={{car.description}}>
+        <div class="card-body">
+          <h5 class="card-title">{{ car.description }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Brand: {{ car.brandName }}</li>
+          <li class="list-group-item">Color: {{ car.colorName }}</li>
+          <li class="list-group-item">Model Year: {{ car.modelYear }}</li>
+          <li class="list-group-item">Daily Price: {{ car.dailyPrice }} ₺</li>
+        </ul>
+        <div class="card-body">
+            <section style="float:left">
+                <button routerLink= "/cars/detail/{{car.carId}}" type="button" class="btn btn-success">Details</button>{{" "}}
+                <button *ngIf="isAuthenticated()" routerLink="/cars/update/{{car.carId}}" type="button" class="btn btn-danger">Update</button>
+              </section>
+        </div>
+      </div>
+      <br>
+       
+    </div>
+    
+</div>
+
+
+
+
+
+
+    
+
+ <!-- <div class="row">
+        <div *ngFor="let car of cars" class="col-md-4">
+          <div class="card" style="width: 14rem;">
+            <img src="{{imageBasePath}}{{getCarImage(car)}}" class="card-img-top" alt={{car.description}}>
+            <div class="card-body">
+              <h5 class="card-title">{{ car.description }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Brand: {{ car.brandName }}</li>
+              <li class="list-group-item">Color: {{ car.colorName }}</li>
+              <li class="list-group-item">Model Year: {{ car.modelYear }}</li>
+              <li class="list-group-item">Daily Price: {{ car.dailyPrice }} ₺</li>
+              <li class="list-group-item"><button (click)="rentACar(car)" type="button" class="btn btn-success">Kirala</button></li>
+            </ul>
+          </div>
+          <br>
+           
+        </div>
+        
+    </div> -->

@@ -1,0 +1,88 @@
+<!-- <style>
+.example {
+  background-color: #eee;
+  width: 230px;
+  height: 200px;
+  border: 5px black;
+  overflow-y: scroll;
+}   
+
+</style>
+
+
+ <h5 [class]="getAllBrandClass()" routerLink="/cars">ALL CARS</h5> 
+<div class="form-control">
+    <ul class="list-group">
+        <div class="mb-3">
+            <label for="filterText" class="form-label">BRANDS</label>
+            <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+        </div>
+        <div class="exapmle">
+            <li (click)="setCurrentBrand(brand)"
+            routerLink= "/cars/brand/{{brand.brandId}}"
+            *ngFor="let brand of brands | filterBrand:filterText" 
+            [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
+        </div>
+    </ul>
+</div> -->
+
+
+<!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      All Brands
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <input type="text" [(ngModel)]="filterText" id="filterText" placeholder="Ara">
+      <li (click)="setCurrentBrand(brand)"
+      routerLink= "/cars/brand/{{brand.brandId}}"
+      *ngFor="let brand of brands | filterBrand:filterText">{{brand.brandName}}</li>
+    </ul>
+  </li> -->
+
+
+
+  <br />
+<div>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="filterText"
+      placeholder="Search"
+      [(ngModel)]="filterText"
+    />
+  </div>
+
+  <div class="alert alert-success" role="alert" *ngIf="filterText">
+    {{ filterText }}
+  </div>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let brand of brands | filterBrand: filterText"
+          routerLink="/cars/brand/{{ brand.brandId }}"
+          appTable
+          defaultColor
+        >
+          <th>{{ brand.brandName }}</th>
+          <th>
+            <button
+              class="btn btn-success"
+              routerLink="/brands/update/{{ brand.brandId }}"
+            >
+              Update
+            </button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

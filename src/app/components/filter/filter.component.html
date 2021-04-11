@@ -1,0 +1,43 @@
+<div class="row mb-2">
+
+    <div class="col col-4">
+      <select [(ngModel)]="brandId" class="form-select">
+        <option [selected]="IsCurrentBrandNull()" [value]="undefined" disabled selected>Choose brand</option>
+        <option *ngFor="let brand of brands" 
+        [value]="brand.brandId"
+        [selected]="getSelectedBrand(brand.brandId)">
+          {{ brand.brandName }}
+        </option>
+      </select>
+    </div>
+  
+    <div class="col col-4">
+      <select [(ngModel)] = "colorId" class="form-select">
+        <option [selected]="IsCurrentColorNull()" [value]="undefined" disabled selected>Choose color</option>
+        <option *ngFor="let color of colors"
+        [value]="color.colorId"
+        [selected] = "getSelectedColor(color.colorId)">
+          {{ color.colorName }}
+        </option>
+      </select>
+    </div>
+  
+    <div class="col col-4">
+      <button
+        [routerLink]="getRouterLink()"
+        type="button"
+        class="btn btn-success"
+      >
+        Filtrele
+      </button>{{" "}}
+
+      <button routerLink="/cars"
+      type="button"
+      class="btn btn-danger"
+      >
+        Temizle
+      </button>
+    </div>
+  
+  
+  </div>

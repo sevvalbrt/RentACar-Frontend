@@ -1,0 +1,87 @@
+<!-- <style>
+.example {
+  background-color: #eee;
+  width: 230px;
+  height: 200px;
+  border: 5px black;
+  overflow-y: scroll; 
+}
+</style>
+
+
+<div class="form-control">
+    <ul class="list-group">
+        <div class="mb-3">
+            <label for="filterText" class="form-label">COLORS</label>
+            <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+        </div>
+        <div class="example">
+            <li (click)="setCurrentColor(color)"
+            routerLink= "/cars/color/{{color.colorId}}"
+            *ngFor="let color of colors | filterColor:filterText" 
+            [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
+        </div>
+    </ul>
+</div> -->
+
+
+
+<!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      All Colors
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <input type="text" [(ngModel)]="filterText" id="filterText" placeholder="Ara">
+      <li (click)="setCurrentColor(color)"
+      routerLink= "/cars/color/{{color.colorId}}"
+      *ngFor="let color of colors | filterColor:filterText">{{color.colorName}}</li>
+    </ul>
+  </li> -->
+
+
+  <br />
+<div>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="filterText"
+      placeholder="Search"
+      [(ngModel)]="filterText"
+    />
+  </div>
+
+  <div class="alert alert-success" role="alert" *ngIf="filterText">
+    {{ filterText }}
+  </div>
+
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let color of colors | filterColor: filterText"
+          routerLink="/cars/color/{{ color.colorId }}"
+          appTable
+          defaultColor
+        >
+          <th>{{ color.colorName }}</th>
+          <th>
+            <button
+              class="btn btn-success"
+              routerLink="/colors/update/{{ color.colorId }}"
+            >
+              Update
+            </button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
