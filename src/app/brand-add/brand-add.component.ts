@@ -64,7 +64,8 @@ export class BrandAddComponent implements OnInit {
     if (this.brandForm.valid) {
       let brand = Object.assign({}, this.brandForm.value);
       this.brandService.add(brand).subscribe((response) => {
-      this.toastrService.success(response.message);
+      this.toastrService.success(response.message,"Successfully");
+      this.router.navigate(["/brands/getall"])
       },responseError=> {
          if (responseError.error.Errors.length > 0) {
             for (let i = 0; i < responseError.error.Errors.length; i++) {

@@ -9,9 +9,6 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home Page</a>
         </li>
-        <li class="nav-item">
-          <a *ngIf="isAuthenticated()" class="nav-link active" aria-current="page" routerLink="/customers">Customers</a>
-        </li>
         <li *ngIf="isAuthenticated()" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Cars
@@ -41,7 +38,7 @@
       </ul>
       <form for="filterText" class="d-flex">
         <input class="form-control me-2"  [(ngModel)]="filterText"  name="filterText"  id="filterText" type="text" placeholder="Search">
-        <button class="btn btn-outline-primary me-2" type="submit" routerLink="/cars/{{filterText}}">Search</button>
+        <button class="btn btn-outline-success me-2" type="submit" routerLink="/cars/{{filterText}}">Search</button>
       </form>
 
       <ul class="navbar-nav mr-auto">

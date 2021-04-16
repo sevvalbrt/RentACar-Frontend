@@ -96,6 +96,7 @@ export class CarAddComponent implements OnInit {
       let carModel = Object.assign({},this.carForm.value)
       this.carService.addCar(carModel).subscribe(response => {
         this.toastrService.success(response.message,"Successfully")
+        this.router.navigate([""])
       },responseError => {
         if (responseError.error.ValidationErrors.length>0) {
           for (let i = 0; i < responseError.error.ValidationErrors.length; i++) {

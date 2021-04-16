@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { Customer } from 'src/app/models/customer';
 import { Rental } from 'src/app/models/rental';
+import { AuthService } from 'src/app/services/auth.service';
 import { CarService } from 'src/app/services/car.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { RentalService } from 'src/app/services/rental.service';
@@ -32,7 +33,8 @@ export class RentalComponent implements OnInit {
     private router: Router,
     private toastrService: ToastrService,
     private datePipe: DatePipe,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
     
@@ -69,11 +71,11 @@ export class RentalComponent implements OnInit {
       brandName : this.car.brandName,
       colorName : this.car.colorName,
       dailyPrice : this.car.dailyPrice,
-      customerId : this.customerId,
+      // customerId : this.customerId,
       rentDate : this.rentDate,
       returnDate : this.returnDate,
     };
-    if (!MyRental.customerId || !MyRental.rentDate) {
+    if (!MyRental.rentDate) {
       this.toastrService.error("Eksik bilgi girdiniz","Bilgilerinizi kontrol edin")
     } else{
       this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
@@ -83,15 +85,19 @@ export class RentalComponent implements OnInit {
       );
     }
   }
-  setCustomerId(customerId: string) {
-    this.customerId = +customerId;
-    console.log(this.customerId);
-  }
+  // setCustomerId(customerId: string) {
+  //   this.customerId = +customerId;
+  //   console.log(this.customerId);
+  // }
   // getCustomer() {
   //   this.customerService.getCustomers().subscribe((response) => {
   //     this.customers = response.data;
   //     console.log(response.data);
   //   });
   // }
+
+  isAuthenticated(){
+    return this.authService.isAuthenticated();
+  }
 
 }

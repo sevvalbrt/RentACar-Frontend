@@ -64,7 +64,8 @@ export class ColorAddComponent implements OnInit {
     if(this.colorForm.valid){
       let colorModel=Object.assign({},this.colorForm.value)
       this.colorService.add(colorModel).subscribe(response=>{   
-        this.toastrService.success(response.message,"başarılı")
+        this.toastrService.success(response.message,"Successfully")
+        this.router.navigate(["/colors/getall"])
       },responseError=>{
         if(responseError.error.Errors.length>0){
           for (let i = 0; i < responseError.error.Errors.length; i++) {
