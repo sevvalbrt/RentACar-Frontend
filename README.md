@@ -1,3 +1,10 @@
+![Ekran Alıntısı](https://user-images.githubusercontent.com/37674733/115023057-f10ff480-9ec6-11eb-8e32-f1394875c9aa.PNG)
+![Ekran Alıntısı1](https://user-images.githubusercontent.com/37674733/115023105-0127d400-9ec7-11eb-9cbe-e1adb529a69e.PNG)
+![Ekran Alıntısı2](https://user-images.githubusercontent.com/37674733/115023135-09800f00-9ec7-11eb-8e23-2b3016406891.PNG)
+![Ekran Alıntısı3](https://user-images.githubusercontent.com/37674733/115023145-0d139600-9ec7-11eb-8267-ecadb40ee1b0.PNG)
+![Ekran Alıntısı4](https://user-images.githubusercontent.com/37674733/115023156-100e8680-9ec7-11eb-8f7f-70ecfb678c4b.PNG)
+![Ekran Alıntısı5](https://user-images.githubusercontent.com/37674733/115023163-1270e080-9ec7-11eb-907e-a18997049f99.PNG)
+![Ekran Alıntısı6](https://user-images.githubusercontent.com/37674733/115023173-156bd100-9ec7-11eb-8710-2076db40bfd6.PNG)
 # CarRental
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
